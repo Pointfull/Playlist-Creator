@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist Creator — Download</title>
+    <style>
+        :root {
+            --bg-color: #000000;
+            --card-bg: #111111;
+            --border-color: #222222;
+            --text-main: #ffffff;
+            --text-sub: #888888;
+            --button-bg: #ffffff;
+            --button-text: #000000;
+            --button-hover: #e5e5e5;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 24px;
+        }
+
+        .container {
+            background: var(--card-bg);
+            padding: 48px 36px;
+            border-radius: 16px;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            border: 1px solid var(--border-color);
+        }
+
+        h1 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            letter-spacing: -0.5px;
+            color: var(--text-main);
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 16px;
+            background: var(--button-bg);
+            color: var(--button-text);
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background-color 0.15s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .download-btn:hover {
+            background: var(--button-hover);
+        }
+
+        .status-msg {
+            display: none;
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-sub);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Playlist Creator</h1>
+
+        <!-- Direct Download Link -->
+        <a href="Playlist-Creator.exe" download="Playlist-Creator.exe" class="download-btn" id="dlBtn" onclick="handleDownload()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            Download Executable
+        </a>
+
+        <div class="status-msg" id="statusMsg">
+            Downloading Playlist-Creator.exe...
+        </div>
+    </div>
+
+    <script>
+        function handleDownload() {
+            document.getElementById('statusMsg').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
